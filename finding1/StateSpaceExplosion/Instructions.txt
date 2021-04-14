@@ -1,0 +1,2 @@
+Compile all the java classes in the statespace folder (including the classes in exams folder)
+Run JPF on the applicationproperties.jpf file

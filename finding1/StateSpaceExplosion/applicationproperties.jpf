@@ -1,0 +1,3 @@
+target = statespace.ClinicState
+classpath = .
+target.args = 10
