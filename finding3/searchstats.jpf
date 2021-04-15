@@ -1,0 +1,5 @@
+target=exam.Main
+classpath=.
+native_classpath=.
+cg.enumerate_random=true
+listener=gov.nasa.jpf.listener.SearchStats
