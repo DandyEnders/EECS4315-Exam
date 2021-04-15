@@ -23,6 +23,7 @@ public class Clinic {
 	 * @param capacity the capacity of this clinic
 	 */
 	public Clinic(int capacity) {
+		if (capacity <= 0) { throw new IllegalArgumentException("Capacity must be bigger than 0."); }
 		this.capacity = capacity;
 		this.occupancy = 0;
 
@@ -33,7 +34,7 @@ public class Clinic {
 	/**
 	 * Initializes this clinic with the default capacity.
 	 */
-	public Clinic() {
+	public Clinic() throws Exception {
 		this(DEFAULT_CAPACITY);
 	}
 
