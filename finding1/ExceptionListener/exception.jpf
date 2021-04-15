@@ -1,0 +1,4 @@
+target=exam.Main
+classpath=.
+native_classpath=.
+listener=ExceptionListener
