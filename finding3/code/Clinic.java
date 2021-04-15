@@ -1,8 +1,5 @@
 package exam;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * A vaccination clinic.
  * 
@@ -14,7 +11,6 @@ public class Clinic {
 
 	private Screening screening;
 	private Vaccination vaccination;
-	private ArrayList<Person> left;
 
 	/**
 	 * The default capacity of a clinic.
@@ -27,29 +23,17 @@ public class Clinic {
 	 * @param capacity the capacity of this clinic
 	 */
 	public Clinic(int capacity) {
-		if (capacity <= 0) { throw new IllegalArgumentException("Capacity must be bigger than 0."); }
 		this.capacity = capacity;
 		this.occupancy = 0;
 
 		this.screening = new Screening();
 		this.vaccination = new Vaccination();
-		left = new ArrayList<Person>();
 	}
-	public void addPerson(Person p) {
-		left.add(p);
-	}
-	public void removePerson(Person p) {
-		left.remove(p);
-	}
-	public int personLeft() {
-		return left.size();
-	}
-	
 
 	/**
 	 * Initializes this clinic with the default capacity.
 	 */
-	public Clinic() throws Exception {
+	public Clinic() {
 		this(DEFAULT_CAPACITY);
 	}
 

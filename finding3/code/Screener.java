@@ -25,7 +25,7 @@ public class Screener extends Thread implements Staff {
 	@Override
 	public void run() {
 		this.clinic.arrive();
-		while (!Thread.interrupted() && this.clinic.personLeft()>0) {
+		while (!Thread.interrupted()) {
 			this.clinic.screen();
 		}
 		this.clinic.depart();
