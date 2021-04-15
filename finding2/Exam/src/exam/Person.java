@@ -7,18 +7,26 @@ package exam;
  */
 public class Person extends Thread {
 	private Clinic clinic;
-	
+	private boolean isEntered;
+	private boolean isScreened;
+	private boolean isVaccinated;
+	private boolean isLeaved;
+
 	/**
 	 * Initializes this person with the given name and clinic.
 	 * 
-	 * @param name the name of this person
+	 * @param name   the name of this person
 	 * @param clinic the clinic which this person visits
 	 */
 	public Person(String name, Clinic clinic) {
 		super(name);
 		this.clinic = clinic;
+		this.isEntered = false;
+		this.isScreened = false;
+		this.isVaccinated = false;
+		this.isLeaved = false;
 	}
-	
+
 	/**
 	 * A person
 	 * <ol>
@@ -32,9 +40,15 @@ public class Person extends Thread {
 	public void run() {
 		try {
 			this.clinic.enter();
+			this.isEntered = true;
 			this.clinic.getScreened();
+			this.isScreened = true;
 			this.clinic.getVaccinated();
+			this.isVaccinated = true;
 			this.clinic.leave();
-		} catch (InterruptedException e) {}
+			this.isLeaved = true;
+		} catch (InterruptedException e) {
+			
+		}
 	}
 }
