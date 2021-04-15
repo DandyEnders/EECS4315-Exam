@@ -25,7 +25,7 @@ public class Nurse extends Thread implements Staff {
 	@Override
 	public void run() {
 		this.clinic.arrive();
-		while (!Thread.interrupted()) {
+		while (!Thread.interrupted() && this.clinic.personLeft()>0) {
 			this.clinic.vaccinate();
 		}
 		this.clinic.depart();

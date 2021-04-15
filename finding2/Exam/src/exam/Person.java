@@ -25,6 +25,7 @@ public class Person extends Thread {
 		this.isScreened = false;
 		this.isVaccinated = false;
 		this.isLeaved = false;
+		clinic.addPerson(this);
 	}
 
 	/**
@@ -47,8 +48,10 @@ public class Person extends Thread {
 			this.isVaccinated = true;
 			this.clinic.leave();
 			this.isLeaved = true;
+			this.clinic.removePerson(this);
 		} catch (InterruptedException e) {
 			
 		}
 	}
+	
 }
